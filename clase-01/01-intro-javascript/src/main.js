@@ -80,13 +80,28 @@ console.log('// push(): Agrega al final un elemento');
 let nuevaCantidadDeElementosDelArray = nuevoArrayFrutasTodas.push('Frambuesa', 'Granada', 'Ciruela', 'Guarana', 'Ñangapiri', 'Palta', 'Tomate')
 console.log(nuevaCantidadDeElementosDelArray); // 26
 
-// reverse(): Invierte el orden de los elementos
-// shift(): Elimina el primer elemento
-// unshift(): Agrega un el elemento al principio
+console.log('// reverse(): Invierte el orden de los elementos')
+
+let arrayInvertido = nuevoArrayFrutasTodas.reverse()
+console.log(arrayInvertido);
+
+console.log('// shift(): Eliminaga un el elemento al principio')
+
+let elementoDelPrincipioEliminado = arrayInvertido.shift()
+console.log(elementoDelPrincipioEliminado);
+
+console.log('// unshift(): Agrega un el elemento al principio')
+
+nuevaCantidadDeElementosDelArray = arrayInvertido.unshift('Carambola', 'Coco', 'Higo', 'Litchi', 'Papaya', 'Maracuya')
+console.log(nuevaCantidadDeElementosDelArray); // 31
+
+console.log('// forEach(): Itera sobre los elementos (recorre elementos)')
+
+
+
 // slice(): Extrae una copia de una parte de un array en nuevo array
 // splice(): Agrega o elimina elementos en una posición especifica
 // sort(). Orden alos elementos alfabeticamente
-// forEach(): Itera sobre los elementos (recorre elementos)
 // map(): El map recorre los elementos del array y modifica su valores creando resultado otro array de la misma dimensión
 // filter(): Filtra los elementos de un array y crea como resultado otro array con los elementos filtrados.
 
