@@ -49,9 +49,16 @@ let arrayFrutasFaltantes = ['Mora', 'Melocotón', 'Limón', 'Mandarina', 'Aranda
 
 console.log(arrayFrutas);
 console.log(arrayFrutas[0]); // Accedo al primer elemento (Manzana)
+console.log(arrayFrutas[arrayFrutas.length-1]) // Accedo al último elemento
+console.log(arrayFrutas.at(-1)) // Accedo al último elemento
 console.log(arrayFrutas.length);
 console.log(arrayFrutasFaltantes)
 console.log(arrayFrutasFaltantes[0]) // Accedo al primer elemento (Mora)
+console.log(arrayFrutasFaltantes[arrayFrutas.length-1]) // Accedo al primer elemento (Mora)
+console.log(arrayFrutasFaltantes.at(-1)) // Accedo al último elemento
+
+console.log('// ! Métodos de los arrays');
+
 
 
 
