@@ -64,6 +64,12 @@ let nuevoArrayFrutasTodas = arrayFrutas.concat(arrayFrutasFaltantes)
 console.log(nuevoArrayFrutasTodas);
 
 // join(): Combina los elementos de un array en una sola cadena
+
+let cadenaFrutas = nuevoArrayFrutasTodas.join()
+console.log(cadenaFrutas);
+cadenaFrutas = nuevoArrayFrutasTodas.join('%')
+console.log(cadenaFrutas);
+
 // pop(): Elimina el último elemento
 // push(): Agrega al final un elemento
 // reverse(): Invierte el orden de los elementos
