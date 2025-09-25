@@ -77,7 +77,7 @@ console.log(ultimoElemento);
 
 console.log('// push(): Agrega al final un elemento');
 
-let nuevaCantidadDeElementosDelArray = nuevoArrayFrutasTodas.push('Franbuesa', 'Granada', 'Ciruela', 'Guarana', 'Ñangapiri', 'Palta', 'Tomate')
+let nuevaCantidadDeElementosDelArray = nuevoArrayFrutasTodas.push('Frambuesa', 'Granada', 'Ciruela', 'Guarana', 'Ñangapiri', 'Palta', 'Tomate')
 console.log(nuevaCantidadDeElementosDelArray); // 26
 
 // reverse(): Invierte el orden de los elementos
@@ -90,6 +90,25 @@ console.log(nuevaCantidadDeElementosDelArray); // 26
 // map(): El map recorre los elementos del array y modifica su valores creando resultado otro array de la misma dimensión
 // filter(): Filtra los elementos de un array y crea como resultado otro array con los elementos filtrados.
 
+console.warn("Gestión de un array como cola o pila");
+
+// cola -> shift() y unshift()
+// pila -> pop() y push()
+
+console.warn('// Array (listas) homogeneas')
+
+let colores = ['rojo', 'verde', 'azul', 'negro', 'lila'] // todas cadenas
+let edades = [22, 33, 25, 55, 90] // todas numeros
+
+console.warn('// Array (listas) heterogeneos [NO DEBO]');
+//                0 -> nombre | 1 -> apellido | 2 -> edad | 3 -> isTeacher
+// let arrayMaxi = ['Maximiliano', 'Principe', 22, true]
+
+//let maxiNombre = 'Maximiliano'
+//let maxiApellido = 'Principe'
+//let maxiEdad = 22
+//let maxiIsteacher = true
+//let maxi = 'Maximiliano|Principe|22|true'
 
 
 console.warn("// ! CONST (ES6)");
