@@ -59,7 +59,22 @@ console.log(arrayFrutasFaltantes.at(-1)) // Accedo al último elemento
 
 console.log('// ! Métodos de los arrays');
 
+console.log('// concat(): Une varios array')
+let nuevoArrayFrutasTodas = arrayFrutas.concat(arrayFrutasFaltantes)
+console.log(nuevoArrayFrutasTodas);
 
+// join(): Combina los elementos de un array en una sola cadena
+// pop(): Elimina el último elemento
+// push(): Agrega al final un elemento
+// reverse(): Invierte el orden de los elementos
+// shift(): Elimina el primer elemento
+// unshift(): Agrega un el elemento al principio
+// slice(): Extrae una copia de una parte de un array en nuevo array
+// splice(): Agrega o elimina elementos en una posición especifica
+// sort(). Orden alos elementos alfabeticamente
+// forEach(): Itera sobre los elementos (recorre elementos)
+// map(): El map recorre los elementos del array y modifica su valores creando resultado otro array de la misma dimensión
+// filter(): Filtra los elementos de un array y crea como resultado otro array con los elementos filtrados.
 
 
 
