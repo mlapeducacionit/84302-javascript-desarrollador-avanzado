@@ -23,6 +23,8 @@ console.log(numeroSinDecimal);
 let numeroConDecimal = 33.22 // Numero (Number) // camelCase
 console.log(numeroConDecimal);
 
+console.log('<h1 class="texto-grande texto-rojo">Introducción a Javascript</h1>');
+
 
 console.warn("// ! CONST (ES6)");
 /* Me permite construir cajitas que NO PUEDO modificar más adelante */
