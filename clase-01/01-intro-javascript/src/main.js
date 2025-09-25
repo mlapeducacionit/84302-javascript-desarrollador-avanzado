@@ -96,6 +96,57 @@ nuevaCantidadDeElementosDelArray = arrayInvertido.unshift('Carambola', 'Coco', '
 console.log(nuevaCantidadDeElementosDelArray); // 31
 
 console.log('// forEach(): Itera sobre los elementos (recorre elementos)')
+// Recorre los elementos de la array
+
+// callback (cb): Es una función pasada como argumento de otra función
+//                            ⬇️⬇️ <---- callback
+//arrayInvertido.forEach(function() {})
+
+/*
+! Al no tener nombre se llama función anonima
+function(fruta) {
+    console.log(fruta)
+}
+*/
+
+console.log(arrayInvertido);
+
+arrayInvertido.forEach(function(fruta, indice, array) {
+    console.log(fruta)
+    console.log(indice)
+    console.log(array);
+})
+console.warn('-----------------------------------------');
+
+function callbackFuncion(item, indice, array) {
+    console.log(item)
+    console.log(indice)
+    console.log(array);
+}
+
+arrayInvertido.forEach(callbackFuncion)
+
+console.warn('-----------------------------------------');
+
+let personas = ['Laura', 'Lorena', 'Claudia', 'Nadia', 'Silvia']
+
+personas.forEach(callbackFuncion)
+
+/* function forEach(callback) {
+    // -----
+    // -----
+    // -----
+
+    callback()
+} */
+
+//             ⬇️ ⬇️  <---- Parametros
+/* function sumar(n1, n2) {
+    return n1 + n2
+}
+ */
+//   ⬇️ ⬇️  <---- Argumentos
+/* sumar(2, 4) // Invoco, llamo, ejecuto. */
 
 
 
