@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.texto-grande {
+    font-size: 2rem;
+}
+
+.texto-rojo {
+    color: red;
+}
