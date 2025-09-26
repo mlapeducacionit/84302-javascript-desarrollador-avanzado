@@ -166,8 +166,6 @@ let impares = arrayNumeros.filter((num) => num % 2 !== 0)
 console.log(impares)
 
 
-
-
 console.warn('Repaso Arrow function')
 
 // Funciones tradicionales 
@@ -217,8 +215,24 @@ darLaBienvenido()
 
 // slice(): Extrae una copia de una parte de un array en nuevo array
 // splice(): Agrega o elimina elementos en una posición especifica
-// sort(). Orden alos elementos alfabeticamente
 
+console.warn('// sort(). Orden alos elementos alfabeticamente')
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+let arrayLetras = ['A', 'D', 'Z', 'G', 'M']
+let arrayNumeritos =  [33, 55, 22, 11, 27, 34]
+
+console.log(arrayNumeritos)
+let funcionOrdenamiento = (a, b) => {
+    //console.log(a-b) // a es más chico que b (-1) | a es más grande b (1)
+    return a - b
+}
+
+let ordenadoNumeritos = arrayNumeritos.sort(funcionOrdenamiento)
+console.log(ordenadoNumeritos);
+
+let ordenandoLetras = arrayLetras.sort()
+console.log(ordenandoLetras)
 
 console.warn("Gestión de un array como cola o pila");
 
