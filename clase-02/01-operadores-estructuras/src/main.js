@@ -223,6 +223,17 @@ let dosFlores = flores.slice(2, 4)
 console.log(dosFlores)
 
 console.warn('// splice(): Agrega o elimina elementos en una posición especifica')
+// https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+// ? Eliminando
+//let elementosEliminados = flores.splice(2, 1)
+let elementosEliminados = flores.splice(2, 3)
+console.log(flores)
+console.log(elementosEliminados); // ['Girasol', 'Margarita', 'Petunia']
+
+// ? Remplazar
+let borroDanelion = flores.splice(0, 1, 'Lirio', 'Geranio')
+console.log(borroDanelion);
+console.log(flores)
 
 console.warn('// sort(). Orden alos elementos alfabeticamente')
 
