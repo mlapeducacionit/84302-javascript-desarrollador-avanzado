@@ -108,7 +108,31 @@ personas.forEach(callbackFuncion)
 //   ⬇️ ⬇️  <---- Argumentos
 /* sumar(2, 4) // Invoco, llamo, ejecuto. */
 
+console.warn('-------------------------------------------------')
+console.warn('-------------------------------------------------')
+console.warn('-------------------------------------------------')
 
+console.warn('Repaso método forEach()')
+
+const arrayAnimales = ['Gatos', 'Perros', 'Cabras', 'Horneros', 'Ornitorrincos', 'Mapaches', 'Gallinas']
+console.log(arrayAnimales)
+
+arrayAnimales.forEach((animal) => {
+    console.log(animal)
+})
+// setencia1; setencia2; sentencia3
+// let i = 0; i < arrayAnimales.length; i++
+// 1. let i = 0 (Una sola vez)
+// 2. i < arrayAnimales.length (Se controla)
+// 3. Ingresa al bloque de código
+// 4. Se incrementa
+// 5. Se vuelve a controlar
+// 6. Ingresa al bloque de código
+
+for (let i = 0; i < arrayAnimales.length; i++) {
+    //debugger
+    console.log(arrayAnimales[i])
+}
 
 // slice(): Extrae una copia de una parte de un array en nuevo array
 // splice(): Agrega o elimina elementos en una posición especifica
