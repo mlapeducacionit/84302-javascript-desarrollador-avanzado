@@ -155,13 +155,18 @@ const pares = arrayNumeros.filter((num) => {
 
 console.log(pares)
 
-const impares = arrayNumeros.filter((num) => {
+/* let impares = arrayNumeros.filter((num) => {
     if ( num % 2 !== 0 ) {
         return num
     }
-})
+}) */
+// Simplificando
+let impares = arrayNumeros.filter((num) => num % 2 !== 0)
 
 console.log(impares)
+
+
+
 
 console.warn('Repaso Arrow function')
 
