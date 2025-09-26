@@ -213,8 +213,16 @@ let darLaBienvenido = _ => {
 
 darLaBienvenido()
 
-// slice(): Extrae una copia de una parte de un array en nuevo array
-// splice(): Agrega o elimina elementos en una posición especifica
+console.warn('// slice(): Extrae una copia de una parte de un array en nuevo array')
+
+let flores = ['Danelion', 'Rosa', 'Girasol', 'Margarita', 'Petunia', 'Violeta', 'Tupilán', 'Clavel', 'Cala']
+
+console.log(flores)
+//                      inicio, fin
+let dosFlores = flores.slice(2, 4)
+console.log(dosFlores)
+
+console.warn('// splice(): Agrega o elimina elementos en una posición especifica')
 
 console.warn('// sort(). Orden alos elementos alfabeticamente')
 
