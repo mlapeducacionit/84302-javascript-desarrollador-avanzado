@@ -163,6 +163,53 @@ const impares = arrayNumeros.filter((num) => {
 
 console.log(impares)
 
+console.warn('Repaso Arrow function')
+
+// Funciones tradicionales 
+function restarOtraManera(n1, n2) {
+    console.log(n1-n2)
+}
+
+restarOtraManera(8, 2)
+
+let restar = function(n1, n2) {
+    console.log(n1-n2)
+}
+
+restar(4, 1)
+
+// Funciones Flecha
+/* let restarArrow = (n1, n2) => {
+    console.log(n1-n2)
+} */
+// Simplificando la función arrow
+let restarArrow = (n1, n2) => console.log(n1-n2)
+restarArrow(67, 5)
+
+/* let multiplicarArrow = (n1, n2, n3) => {
+    return n1 * n2 * n3
+} */
+//let multiplicarArrow = (n1, n2, n3) => n1 * n2 * n3
+let multiplicarArrow = (n1, n2, n3) => {
+    let res = n1 * n2 * n3 
+    return res
+}
+
+const resultadoMulti = multiplicarArrow(3, 5, 7)
+console.log(resultadoMulti)
+
+let saludarPorNombre = nombre => {
+    console.log('Bienvenido', nombre)
+}
+
+saludarPorNombre('Maxi')
+
+let darLaBienvenido = _ => {
+    console.log('Hola a todos!')
+}
+
+darLaBienvenido()
+
 // slice(): Extrae una copia de una parte de un array en nuevo array
 // splice(): Agrega o elimina elementos en una posición especifica
 // sort(). Orden alos elementos alfabeticamente
