@@ -134,11 +134,39 @@ for (let i = 0; i < arrayAnimales.length; i++) {
     console.log(arrayAnimales[i])
 }
 
+console.warn('// map(): El map recorre los elementos del array y modifica su valores creando resultado otro array de la misma dimensión')
+
+const arrayNumeros = [7, 10, 15, 2, 5, 13, 29]
+console.log(arrayNumeros)
+
+let multiplicadoX2 = arrayNumeros.map((num) => {
+    // debugger
+    return num * 2
+})
+console.log(multiplicadoX2)
+
+console.warn('// filter(): Filtra los elementos de un array y crea como resultado otro array con los elementos filtrados.')
+
+const pares = arrayNumeros.filter((num) => {
+    if ( num % 2 === 0 ) {
+        return num
+    }
+})
+
+console.log(pares)
+
+const impares = arrayNumeros.filter((num) => {
+    if ( num % 2 !== 0 ) {
+        return num
+    }
+})
+
+console.log(impares)
+
 // slice(): Extrae una copia de una parte de un array en nuevo array
 // splice(): Agrega o elimina elementos en una posición especifica
 // sort(). Orden alos elementos alfabeticamente
-// map(): El map recorre los elementos del array y modifica su valores creando resultado otro array de la misma dimensión
-// filter(): Filtra los elementos de un array y crea como resultado otro array con los elementos filtrados.
+
 
 console.warn("Gestión de un array como cola o pila");
 
