@@ -273,8 +273,113 @@ console.warn('// Array (listas) heterogeneos [NO DEBO]');
 //let maxiIsteacher = true
 //let maxi = 'Maximiliano|Principe|22|true'
 
-
 console.warn("// ! CONST (ES6)");
 /* Me permite construir cajitas que NO PUEDO modificar más adelante */
 
+const PI = 3.141592
+// PI = 5555 // Una vez definida la constante no se puede modificar
+
+// ! CONSTRUCTORES
+
+/* 
+constructor  | var    |   let     |   const
+alcance      | global |   local   |   local
+redeclarable | si     |   no      |   no
+redefinible  | si     |   si      |   no
+*/
+
+// ! Alcance
+/* if ( true ) {
+    let nombre = 'Maxi'
+    console.log(nombre) // local, existe
+}
+console.log(nombre) // global, no */
+
+let datos
+console.log(datos) // tipo undefined
+// redefino datos
+datos = 12313
+
+let letra = 'D' // declarando y definiendo
+letra = 'D' // redefino
+
+// ! NO USAR VARRRRRRRRRRRRRRRRRRR
+variable = 2
+console.log(variable);
+var variable = 3
+console.log(variable);
+var variable = 5
+console.log(variable);
+
+console.warn('// ! Operadores aritmeticos');
+// TEMPLATE STRING (Templates literales) -> ` <--- backtick <--- ALT + 96
+
+
+console.warn('// ! + ');
+console.log(`La suma de 4 más 2 es igual a: ${4 + 2}`)
+console.warn('// ! - ');
+console.log(`La resta de 5 menos 3 es igual a ${5 - 3}`)
+console.warn('// ! * ');
+console.log(`La multiplicaicón de 8 por 3 es igual a ${8*3}`)
+console.warn('// ! /');
+console.log(`La división de 8 divido 2 es igual a ${8/2}`)
+console.warn('// ! %');
+console.log(`El módulo de 12 sobre 2 es igual a ${8%2}`)
+console.warn('// ! **');
+console.log(`La potenciación de 2 divido 5 es igual a ${2**5}`)
+console.warn('// ! ++');
+let numero = 8
+console.log(`El incremento de 8 es ${++numero} preincremento`) // incrementa y luego muestra
+let otroNumero = 3
+console.log(`El predecremento de 3 es ${--otroNumero} predecremento`) // decrementa y luego muestra
+
+let numeroPost = 12
+let numeroIncrementando = numeroPost++
+// debugger
+console.log(`El incremento de 12 es ${numeroIncrementando} preincremento`) 
+let otroNumeroPost = 22
+let numeroDecrementado = otroNumeroPost--
+console.log(`El decremento de 22 es ${numeroDecrementado} predecremento`) 
+
+console.warn('// ! Operadores de comparación');
+
+console.warn('// ! =='); // Solo compara valores
+console.log( 8 == '8') // true
+console.warn('// ! ==='); // Siempre usar los estrictos
+console.log( 8 === '8') // false (Compara valores y tipo de dato)
+console.warn('// ! !=');  // Solo compara valores
+console.log( 8 != '8') // false
+console.warn('// ! !=='); // Siempre usar los estrictos
+console.log( 8 !== '8') // true (Compara valores y tipo de dato)
+console.warn('// ! <');
+console.log( 8 < 2) // false
+console.warn('// ! <=');
+console.log( 8 <= 8) // true
+console.warn('// ! >');
+console.log( 8 > 10) // false
+console.warn('// ! >=');
+console.log( 8 >= 10) // false
+
+// ! Operadores lógicos (Short circuit operators)
+
+console.warn('// ! AND -> &&');
+//           p    y   q
+console.log(true && true) // ! true (En y lógico, si ambas son verdaderas el resultado es verdadero)
+console.log(true && false) // false
+console.log(false && true) // false
+console.log(false && false) // false
+
+console.warn('// ! OR -> ||');
+
+console.log(true || true) // true
+console.log(true || false) // true
+console.log(false || true) // true
+console.log(false || false) // ! false (Solo en el caso que ambos sean falsos va a resultar falso)
+
+console.warn('// ! NOT -> ! ');
+
+console.log(!true) // false
+console.log(!!true) // true
+console.log(!false) // true
+console.log(!!false) // false
 
