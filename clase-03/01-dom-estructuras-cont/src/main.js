@@ -14,13 +14,32 @@ console.dir(window.document) // sacar radiografía
 console.log(document.children[0].children[1].children[0]) // h1
 
 // ! Métodos clasicos de acceso a los elementos del DOM
-console.warn('// ? getElementById() // Me retorna un HTMLElement');
+console.warn('// ? getElementById() ** // Me retorna un HTMLElement');
+
+const textoSecundario = document.getElementById('texto-secundario')
+// console.log(textoSecundario)
+console.dir(textoSecundario)
+// https://developer.mozilla.org/en-US/docs/Glossary/Truthy
+// https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+
+textoSecundario.style.backgroundColor = 'crimson'
+
+textoSecundario.classList('color-fondo-violeta')
+
+if ( textoSecundario ) { // true
+    // debugger
+    console.log('Está seleccionado correctamente');
+} else {
+    // debugger
+    console.error('Todo mal...')
+}
+
 console.warn('// ? getElementsByClassName() // Me retorna una colección de HTMLElement');
 console.warn('// ? getElementsByTagName() // Me retorna un colección de HTMLElement');
 
 console.warn('// ? Métodos modernos de acceso a los elementos del DOM');
-console.warn('// ? querySelector() // Me retorna un Nodo');
-console.warn('// ? querySelectorAll() // Me retorno una lista de Nodos');
+console.warn('// ? querySelector() ** // Me retorna un Nodo');
+console.warn('// ? querySelectorAll() ** // Me retorno una lista de Nodos');
 
 
 
