@@ -22,9 +22,9 @@ console.dir(textoSecundario)
 // https://developer.mozilla.org/en-US/docs/Glossary/Truthy
 // https://developer.mozilla.org/en-US/docs/Glossary/Falsy
 
-textoSecundario.style.backgroundColor = 'crimson'
+//textoSecundario.style.backgroundColor = 'crimson'
 
-textoSecundario.classList('color-fondo-violeta')
+textoSecundario.classList.add('color-fondo-violeta')
 
 if ( textoSecundario ) { // true
     // debugger
@@ -35,7 +35,19 @@ if ( textoSecundario ) { // true
 }
 
 console.warn('// ? getElementsByClassName() // Me retorna una colección de HTMLElement');
+
+
+
 console.warn('// ? getElementsByTagName() // Me retorna un colección de HTMLElement');
+
+const todosLosTitulosH2 = document.getElementsByTagName('h2')
+console.log(todosLosTitulosH2); // HTMLCollection -> se va a trabajar como si fuera un array
+
+//console.log(todosLosTitulosH2[0])
+//console.dir(todosLosTitulosH2[0])
+const segundoElemento = todosLosTitulosH2[1]
+console.log(segundoElemento)
+segundoElemento.classList.add('color-fondo-violeta')
 
 console.warn('// ? Métodos modernos de acceso a los elementos del DOM');
 console.warn('// ? querySelector() ** // Me retorna un Nodo');

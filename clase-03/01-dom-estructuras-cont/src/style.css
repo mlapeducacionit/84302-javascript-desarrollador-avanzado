@@ -11,3 +11,29 @@
 .texto-rojo {
     color: red;
 }
+
+h2 {
+    background-color: blue;
+}
+
+
+h2.color-fondo-violeta {
+    background-color: blueviolet;
+}
+
+.color-fondo-violeta {
+    background-color: violet;
+}
+
+
+h2.color-fondo-violeta.otro-clase {
+    background-color: blueviolet;
+}
+
+/* Especificidad ->  */
+/* Peso de la aplicación de estilos por diferentes medios */
+/* 1 0 0 0 -> Estilo en línea */
+/* 0 1 0 0 -> ID */
+/* 0 0 1 0 -> CLASE */
+/* 0 0 0 1 -> Etiqueta */
+/* https://specificity.keegan.st/ */
