@@ -11,53 +11,92 @@ const productos = [producto1, producto2, producto3, producto4, producto5] // arr
 
 console.log(productos)
 
-/* const obj = {
+const startAnterior = () => {
+    /* const obj = {
     // clave : valor
     // key : value
     id: 5, 
     nombre: 'Monitor',
     precio: 300, 
     img: 'https://placehold.co/400'
-} */
+    } */
 
-// Recorro el array de objetos y voy mostrar objeto por objeto
-// https://developer.mozilla.org/en-US/docs/Web/API/console/table_static
-for (const producto of productos) {
-    console.log(producto);
-    // De cada producto, extraigo cada clave
-    for (const clave in producto) {       
-        console.log(clave, ' : ', producto[clave]);
+    // Recorro el array de objetos y voy mostrar objeto por objeto
+    // https://developer.mozilla.org/en-US/docs/Web/API/console/table_static
+    for (const producto of productos) {
+        console.log(producto);
+        // De cada producto, extraigo cada clave
+        for (const clave in producto) {       
+            console.log(clave, ' : ', producto[clave]);
+        }
     }
+
+    const contenedor = document.getElementById('contenedor')
+
+    if ( contenedor ) {
+        console.warn('OK');
+    }
+
+    productos.forEach(producto => {
+    console.log(producto);
+
+    // ! Creamos un elemnto dinamicamente
+    const card = document.createElement('div')
+    // console.log(card); // <div></div>
+    // ! Agregamos al div una clase
+    card.classList.add('card')
+
+    // ! Inyectamos dentro de la card el contenido
+
+    card.innerHTML = `
+        <img src="${producto.img}" alt="${producto.nombre}">
+        <h3>${producto.nombre}</h3>
+        <p>Precio: $${producto.precio}</p>
+        <button class="btn">Agregar</button>
+    `
+    //console.log(card)
+
+    // ! Agregamos al contenedor cada una de las card
+    contenedor.appendChild(card)
+
+    })
 }
 
-const contenedor = document.getElementById('contenedor')
+const start = () => {
 
-if ( contenedor ) {
-    console.warn('OK');
+    const contenedor = document.getElementById('contenedor')
+
+    if ( contenedor ) {
+        console.warn('OK');
+    }
+
+    productos.forEach(producto => {
+    console.log(producto);
+
+    // ! Creamos un elemnto dinamicamente
+    const card = document.createElement('div')
+    // console.log(card); // <div></div>
+    // ! Agregamos al div una clase
+    card.classList.add('card')
+
+    // ! Inyectamos dentro de la card el contenido
+
+    card.innerHTML = `
+        <img src="${producto.img}" alt="${producto.nombre}">
+        <h3>${producto.nombre}</h3>
+        <p>Precio: $${producto.precio}</p>
+        <button class="btn">Agregar</button>
+    `
+    //console.log(card)
+
+    // ! Agregamos al contenedor cada una de las card
+    contenedor.appendChild(card)
+
+    })
 }
 
-productos.forEach(producto => {
-  console.log(producto);
 
-  // ! Creamos un elemnto dinamicamente
-  const card = document.createElement('div')
-  // console.log(card); // <div></div>
-  // ! Agregamos al div una clase
-  card.classList.add('card')
-
-  // ! Inyectamos dentro de la card el contenido
-
-  card.innerHTML = `
-    <img src="${producto.img}" alt="${producto.nombre}">
-    <h3>${producto.nombre}</h3>
-    <p>Precio: $${producto.precio}</p>
-    <button class="btn">Agregar</button>
-  `
-  //console.log(card)
-
-  // ! Agregamos al contenedor cada una de las card
-  contenedor.appendChild(card)
+// Es un evento que el avisa a JS que está todo el documento html listo.
+document.addEventListener('DOMContentLoaded', start)
 
 
-
-})
