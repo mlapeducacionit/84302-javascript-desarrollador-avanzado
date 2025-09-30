@@ -11,11 +11,27 @@ const productos = [producto1, producto2, producto3, producto4, producto5] // arr
 
 console.log(productos)
 
+/* const obj = {
+    // clave : valor
+    // key : value
+    id: 5, 
+    nombre: 'Monitor',
+    precio: 300, 
+    img: 'https://placehold.co/400'
+} */
+
 // Recorro el array de objetos y voy mostrar objeto por objeto
+// https://developer.mozilla.org/en-US/docs/Web/API/console/table_static
 for (const producto of productos) {
     console.log(producto);
     // De cada producto, extraigo cada clave
     for (const clave in producto) {       
         console.log(clave, ' : ', producto[clave]);
     }
+}
+
+const contenedor = document.getElementById('contenedor')
+
+if ( contenedor ) {
+    console.warn('OK');
 }
