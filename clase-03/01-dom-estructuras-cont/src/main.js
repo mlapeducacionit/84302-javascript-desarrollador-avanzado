@@ -63,7 +63,7 @@ segundoElemento.classList.add('color-fondo-violeta')
 console.warn('// ? Métodos modernos de acceso a los elementos del DOM');
 // ! IMPORTANTE: Uso selectores CSS.
 console.warn('// ? querySelector() ** // Me retorna un Nodo');
-// * Me devuelve siempre un nodo html
+// * Me devuelve siempre un nodo html. El primero
 
 const etiquetaNivel3 = document.querySelector('h3')
 console.log(etiquetaNivel3)
@@ -72,10 +72,49 @@ const textoUnicio = document.querySelector('#texto-unico')
 console.log(textoUnicio)
 
 console.warn('// ? querySelectorAll() ** // Me retorno una lista de Nodos');
-// * Me devuelve siempre un lista de Node.
+// * Me devuelve siempre un lista de Node. NodeList -> se va a trabajar como si fuera un array
 
 const etiquetaNivel4 = document.querySelectorAll('.texto-poco-importante')
 console.log(etiquetaNivel4)
+
+console.warn('// ! Estructuras de iteracción')
+
+// * continue y break
+// continue -> empezar desde el principio
+// break -> detener el blucle antes de terminar
+
+// for
+
+/* for (let i = 0; i < array.length; i++) {
+    
+} */
+
+// while
+let i = 0
+
+// Muestra solo los impares
+
+while ( i < 50 ) {
+    //debugger
+    i++
+    if ( i % 2 === 0 ) continue
+
+    if ( i === 21 ) {
+        console.log('Encontré el 21');
+        break
+    }
+
+    console.log(i)
+}
+
+
+
+// do while
+// for in
+// for of
+// forEach (array)
+// map (array)
+
 
 
 
