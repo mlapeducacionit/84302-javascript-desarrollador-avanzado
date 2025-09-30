@@ -71,26 +71,36 @@ const start = () => {
     }
 
     productos.forEach(producto => {
-    console.log(producto);
+    // console.log(producto);
 
-    // ! Creamos un elemnto dinamicamente
-    const card = document.createElement('div')
-    // console.log(card); // <div></div>
-    // ! Agregamos al div una clase
-    card.classList.add('card')
+        // ! Creamos un elemnto dinamicamente
+        const card = document.createElement('div')
+        // console.log(card); // <div></div>
+        // ! Agregamos al div una clase
+        card.classList.add('card')
 
-    // ! Inyectamos dentro de la card el contenido
+        // ! Creamos elementos dinamicamente
+        const imagen = document.createElement('img')
+        const titulo = document.createElement('h3')
+        const precio = document.createElement('p')
+        const boton = document.createElement('button')
 
-    card.innerHTML = `
-        <img src="${producto.img}" alt="${producto.nombre}">
-        <h3>${producto.nombre}</h3>
-        <p>Precio: $${producto.precio}</p>
-        <button class="btn">Agregar</button>
-    `
-    //console.log(card)
+        // ! Agregamos el contenido
+        imagen.src = producto.img
+        imagen.alt = producto.nombre
+        titulo.textContent = producto.nombre
+        precio.textContent = `Precio: $${producto.precio}`
+        boton.classList.add('btn')
+        boton.textContent = 'Agregar'
 
-    // ! Agregamos al contenedor cada una de las card
-    contenedor.appendChild(card)
+        // ! Agregamos los nodos a la card
+        card.appendChild(imagen)
+        card.appendChild(titulo)
+        card.appendChild(precio)
+        card.appendChild(boton)
+
+        // ! Agregamos al contenedor cada una de las card
+        contenedor.appendChild(card)
 
     })
 }
