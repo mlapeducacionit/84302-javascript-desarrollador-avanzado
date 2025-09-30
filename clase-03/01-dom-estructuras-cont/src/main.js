@@ -36,7 +36,18 @@ if ( textoSecundario ) { // true
 
 console.warn('// ? getElementsByClassName() // Me retorna una colección de HTMLElement');
 
+const itemBorde = document.getElementsByClassName('item-borde')
+console.log(itemBorde); // HTMLCollection
 
+const array = ['pink', 'crimson', 'blueviolet']
+
+/*
+! No funciona según lo esperado 
+for (let i = 0; i < itemBorde.length; i++) {
+    debugger
+    //itemBorde[i].style.backgroundColor = array[i]
+    itemBorde[i].classList.remove('item-borde')
+} */
 
 console.warn('// ? getElementsByTagName() // Me retorna un colección de HTMLElement');
 
@@ -50,10 +61,21 @@ console.log(segundoElemento)
 segundoElemento.classList.add('color-fondo-violeta')
 
 console.warn('// ? Métodos modernos de acceso a los elementos del DOM');
+// ! IMPORTANTE: Uso selectores CSS.
 console.warn('// ? querySelector() ** // Me retorna un Nodo');
+// * Me devuelve siempre un nodo html
+
+const etiquetaNivel3 = document.querySelector('h3')
+console.log(etiquetaNivel3)
+
+const textoUnicio = document.querySelector('#texto-unico')
+console.log(textoUnicio)
+
 console.warn('// ? querySelectorAll() ** // Me retorno una lista de Nodos');
+// * Me devuelve siempre un lista de Node.
 
-
+const etiquetaNivel4 = document.querySelectorAll('.texto-poco-importante')
+console.log(etiquetaNivel4)
 
 
 

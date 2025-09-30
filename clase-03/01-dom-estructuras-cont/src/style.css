@@ -25,6 +25,9 @@ h2.color-fondo-violeta {
     background-color: violet;
 }
 
+.item-borde {
+    border: 2px solid blue;
+}
 
 h2.color-fondo-violeta.otro-clase {
     background-color: blueviolet;
