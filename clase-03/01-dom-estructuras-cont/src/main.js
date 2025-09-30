@@ -87,7 +87,7 @@ console.warn('// ! Estructuras de iteracción')
 
 /* for (let i = 0; i < array.length; i++) {
     
-} */
+}  */
 
 // while
 let i = 0
@@ -107,11 +107,35 @@ while ( i < 50 ) {
     console.log(i)
 }
 
+console.warn('// do while')
 
+let h = 3
 
-// do while
-// for in
-// for of
+do {
+    //debugger
+    console.log('Aunque sea una vez va a ejecutar el bloque de do while')
+    h++
+} while (h <= 3);
+
+console.warn('// ! for in');
+// Me permite recorrer propiedades de objetos
+
+const persona = { nombre: 'Maxi', edad: 22, rol: 'Docente' }
+
+for (const clave in persona) {
+    //console.log(clave, ':', persona.clave) // Notación punto (dot notation)
+    console.log(clave, ':', persona[clave]) // Notación corchete (bracket notation)
+}
+
+console.warn('// for of')
+// Se usa para recorrer los iterables -> * arrays / strings, sets, maps
+
+const numeros = [10, 20, 30, 40, 50]
+
+for (const valor of numeros) {
+    console.log("Valor: ", valor);
+}
+
 // forEach (array)
 // map (array)
 
