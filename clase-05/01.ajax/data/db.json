@@ -1,0 +1,94 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "Camiseta básica",
+            "categoria": "Ropa",
+            "precio": 19.99,
+            "colores": ["blanco", "negro", "gris"],
+            "imagen": "https://via.placeholder.com/150",
+            "cantidad": 50
+        },
+        {
+            "id": 2,
+            "nombre": "Pantalón jean",
+            "categoria": "Ropa",
+            "precio": 39.99,
+            "colores": ["azul", "negro"],
+            "imagen": "https://via.placeholder.com/150",
+            "cantidad": 35
+        },
+        {
+            "id": 3,
+            "nombre": "Zapatillas deportivas",
+            "categoria": "Calzado",
+            "precio": 59.99,
+            "colores": ["blanco", "rojo", "azul"],
+            "imagen": "https://via.placeholder.com/150",
+            "cantidad": 20
+        },
+        {
+            "id": 4,
+            "nombre": "Mochila urbana",
+            "categoria": "Accesorios",
+            "precio": 29.99,
+            "colores": ["negro", "verde militar"],
+            "imagen": "https://via.placeholder.com/150",
+            "cantidad": 15
+        },
+        {
+            "id": 5,
+            "nombre": "Gorra clásica",
+            "categoria": "Accesorios",
+            "precio": 14.99,
+            "colores": ["rojo", "negro", "azul"],
+            "imagen": "https://via.placeholder.com/150",
+            "cantidad": 60
+        },
+        {
+            "id": 6,
+            "nombre": "Chaqueta impermeable",
+            "categoria": "Ropa",
+            "precio": 89.99,
+            "colores": ["azul", "gris oscuro"],
+            "imagen": "https://via.placeholder.com/150",
+            "cantidad": 10
+        },
+        {
+            "id": 7,
+            "nombre": "Reloj digital",
+            "categoria": "Electrónica",
+            "precio": 49.99,
+            "colores": ["negro", "plateado"],
+            "imagen": "https://via.placeholder.com/150",
+            "cantidad": 25
+        },
+        {
+            "id": 8,
+            "nombre": "Auriculares inalámbricos",
+            "categoria": "Electrónica",
+            "precio": 79.99,
+            "colores": ["blanco", "negro"],
+            "imagen": "https://via.placeholder.com/150",
+            "cantidad": 30
+        },
+        {
+            "id": 9,
+            "nombre": "Cartera de cuero",
+            "categoria": "Accesorios",
+            "precio": 24.99,
+            "colores": ["marrón", "negro"],
+            "imagen": "https://via.placeholder.com/150",
+            "cantidad": 40
+        },
+        {
+            "id": 10,
+            "nombre": "Botas de montaña",
+            "categoria": "Calzado",
+            "precio": 99.99,
+            "colores": ["marrón", "gris"],
+            "imagen": "https://via.placeholder.com/150",
+            "cantidad": 12
+        }
+    ]
+}
