@@ -90,5 +90,9 @@
             "imagen": "https://via.placeholder.com/150",
             "cantidad": 12
         }
+    ],
+    "usuarios": [
+        { "id": 1 },
+        { "id": 2 }
     ]
 }

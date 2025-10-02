@@ -34,3 +34,7 @@ Y pegamos el json de la documentación de json-server
     "server": "json-server --watch data/db.json --port 8080"
 }
 ```
+
+## Extension para ver más bonito los json de los backend
+
+<https://chromewebstore.google.com/detail/json-viewer-pro/eifflpmocdbdmepbjaopkkhbfmdgijcc>

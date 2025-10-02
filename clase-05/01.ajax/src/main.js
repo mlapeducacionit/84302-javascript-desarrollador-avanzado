@@ -66,18 +66,54 @@ console.warn('/* Comunicación asincrónica con AJAX */')
 
 // ! Secuencial -> Sincronico - bloqueante
 /* console.log('Inicio')
-for (let index = 0; index < 1e9; index++) { } // 1.000.000.000
+for (let index = 0; index < 1e10; index++) { } // 10.000.000.000
 console.log('Fin') */
+
+// Hilos de procesamiento. 
 
 // ! No Secuencial -> Asincronicos -> No bloqueante
 
-/* console.log("Inicio");
+/* console.log("Inicio"); */
 
 // BOM -> API del Navegador
-setTimeout(() => {
+/* setTimeout(() => {
   console.log("Tarea Asíncrona"); // Esta tarea asincronica se ejecuta en otro hilo (Como si fuera en otro hilo)
-}, 8000);
+}, 8000); */
 
-setTimeout(cb, mili)
+// setTimeout(cb, mili)
 
-console.log("Fin"); */
+/* console.log("Fin"); */
+
+/* Para resolver la situación que tenemos con Javascript vamos a utilizar las API WEB */
+
+/* WEB API -> dentro del objeto window (XMLHttpRequest) -> callbacks -> axios */
+// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest_API
+
+// ----> Callback Hell -> Piramide de la perdición.
+
+/* WEB API -> dentro del objeto window (fetch) -> Promise -> promesas -> azucar sintactica */
+// https://developer.mozilla.org/es/docs/Web/API/Fetch_API
+
+// Promesas (Promises)
+
+// https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Using_promises
+
+/* -------------------------------------------- */
+console.warn('/* Promesas */')
+/* -------------------------------------------- */
+/* 
+Una promesa es un objeto que representa un valor que puede estar disponible ahora, en el futuro o nunca. 
+*/ 
+
+// Una promesa tiene tres estados:
+
+// Pendiente (pending): está en proceso.
+// Se cumplió (fulfilled): se resolvió exitosamente.
+// No se Cumplió -> Rechazada (rejected): ocurrió un error.
+// ---------------------------
+// Promise(cb) <--- una función pasada como argumento de otra
+// resolve y reject son referencias de funciones
+// resolve -> Se usa cuando quiero que se cumpla la promesa
+// reject -> Se usa cuando quiero que no se cumpla promesa
+
+
