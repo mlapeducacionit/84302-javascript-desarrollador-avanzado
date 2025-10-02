@@ -117,3 +117,26 @@ Una promesa es un objeto que representa un valor que puede estar disponible ahor
 // reject -> Se usa cuando quiero que no se cumpla promesa
 
 
+//const miPromesa = new Promise(() => {})
+
+// ! Promesa que siempre se cumple
+/* const miPromesa = new Promise((resolve, reject) => {
+    resolve('Se cumplió') // Gracias a que uso el resolve, la promesa siempre se va a cumplir
+}) */
+
+/* // ! Promesa que siempre se cumple
+const miPromesa = new Promise((resolve, reject) => {
+    reject('No se cumplió') // Nunca se va cumplir
+}) */
+
+const miPromesa = new Promise((resolve, reject) => {
+  const fueAlCumple = false
+
+  if (fueAlCumple) {
+    resolve('Todo salio bien -> Se cumplió')
+  } else {
+    reject('Algo salió mal -> No se cumplió')
+  }
+})
+
+console.log(miPromesa)
