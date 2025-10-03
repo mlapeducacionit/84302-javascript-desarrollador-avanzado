@@ -323,7 +323,7 @@ const objNuevoUsuario = {
   email: "pedro.sanchez@example.com" 
 }
 
-createUser(urlUsuarios, objNuevoUsuario)
+//createUser(urlUsuarios, objNuevoUsuario)
 
 // R:READ
 
@@ -361,10 +361,49 @@ const getOneUser = (url, id) => {
 
 }
 
-getOneUser(urlUsuarios, 4)
+//getOneUser(urlUsuarios, 4)
 
 // U:UPDATE
+
 // D:DELETE
+// http://localhost:8080/usuarios/id <---- cual elemento quiero eliminar
+
+const deleteUser = (url, id) => {
+  // console.log(url);
+  // console.log(id)
+
+  const urlEliminacionUsuario = url + id
+  console.log(urlEliminacionUsuario)
+
+  const options = {
+    method: 'DELETE' // Por defecto fetch hace peticiones GET
+  }
+
+  const promesaPeticion = fetch(urlEliminacionUsuario, options)
+
+  promesaPeticion
+    .then((res) => {
+
+      if ( !res.ok ) {
+        throw new Error('No se pudo borrar el usuario')
+      }
+
+      const promesaJSON = res.json()
+      return promesaJSON
+
+    })
+    .then((usuarioEliminado) => {
+      console.log(usuarioEliminado);
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+
+}
+
+deleteUser(urlUsuarios, 2)
+
+
 
 
 
