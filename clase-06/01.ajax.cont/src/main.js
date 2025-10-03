@@ -281,11 +281,52 @@ const getOne = (url, id) => {
 // Variables de entorno
 
 // CRUD 
+const urlUsuarios = import.meta.env.VITE_ENDPOINT_USUARIOS
 
 // C:CREATE
+
+const createUser = (url, nuevoUsuario) => {
+
+  //console.log(url)
+  //console.log(nuevoUsuario)
+
+  // Objeto de configuración de la petición
+  const options = {
+    method: 'POST', // Por defecto es GET
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(nuevoUsuario) // convertir un obj de js en un string (Lo necestia el protocolo http)
+  }
+
+  const promesaRespuesta = fetch(url, options) // por defecto fetch hace peticiones con el verbo GET
+
+  promesaRespuesta
+    .then((res)=> {
+
+      if ( !res.ok ) {
+        throw new Error('Ocurrió un error')
+      }
+
+      const promesaJSON = res.json()
+      return promesaJSON
+    })
+    .then((data)=> {
+      console.log(data) // Producto creado con ID -> EL ID LO CREA EL BACKEND
+    })
+    .catch((err)=> {
+      console.error(err)
+    })
+
+}
+
+const objNuevoUsuario = { 
+  nombre: "Pedro Sanchez", 
+  email: "pedro.sanchez@example.com" 
+}
+
+createUser(urlUsuarios, objNuevoUsuario)
+
 // R:READ
 
-const urlUsuarios = import.meta.env.VITE_ENDPOINT_USUARIOS
 console.log(urlUsuarios)
 
 const getOneUser = (url, id) => {
