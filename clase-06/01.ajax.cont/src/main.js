@@ -248,7 +248,7 @@ const getAll = () => {
 // getAll()
 
 // ! GET ONE -> UN SOLO PRODUCTO
-
+// Variables de entorno -> https://vite.dev/guide/env-and-mode
 const url = import.meta.env.VITE_ENDPOINT_PRODUCTOS 
 console.log(url)
 
@@ -279,3 +279,20 @@ const getOne = (url, id) => {
 // getOne(url, 3)
 
 // Variables de entorno
+
+// CRUD 
+
+// C:CREATE
+// R:READ
+
+const urlUsuarios = import.meta.env.VITE_ENDPOINT_USUARIOS
+console.log(urlUsuarios)
+const getOneUser = (url, id) => {
+
+}
+
+// U:UPDATE
+// D:DELETE
+
+
+

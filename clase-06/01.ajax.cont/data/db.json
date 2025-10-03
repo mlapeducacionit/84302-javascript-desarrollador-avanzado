@@ -91,8 +91,11 @@
             "cantidad": 12
         }
     ],
-    "usuarios": [
-        { "id": 1 },
-        { "id": 2 }
+    "usuarios":  [
+        { "id": 1, "nombre": "Ana Torres", "email": "ana.torres@example.com" },
+        { "id": 2, "nombre": "Luis Gómez", "email": "luis.gomez@example.com" },
+        { "id": 3, "nombre": "María Pérez", "email": "maria.perez@example.com" },
+        { "id": 4, "nombre": "Carlos Sánchez", "email": "carlos.sanchez@example.com" },
+        { "id": 5, "nombre": "Lucía Fernández", "email": "lucia.fernandez@example.com" }
     ]
 }
