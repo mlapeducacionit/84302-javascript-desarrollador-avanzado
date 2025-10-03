@@ -259,11 +259,13 @@ const getOne = (url, id) => {
   const objPromesa = fetch(urlUnProducto) // Es una promesa que me devuelve el objeto response
 
   objPromesa
-    .then((res) => {
+    /* .then((res) => {
       //console.log(res)
+      // Cualquier cosa que haga que vos tengas una promesa dentro del then() va necesario que en ese retornes.
       const promesaJSON = res.json()
       return promesaJSON
-    })
+    }) */
+    .then((res) => res.json())
     .then((producto) => {
       console.log(producto) // Voy a tener el producto con id 3
     })
@@ -273,4 +275,6 @@ const getOne = (url, id) => {
 
 }
 
-getOne(url, 3)
+// getOne(url, 3)
+
+// Variables de entorno
