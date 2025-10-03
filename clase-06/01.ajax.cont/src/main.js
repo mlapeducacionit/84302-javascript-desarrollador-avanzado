@@ -249,7 +249,8 @@ const getAll = () => {
 
 // ! GET ONE -> UN SOLO PRODUCTO
 
-const url = 'http://localhost:8080/productos/'
+const url = import.meta.env.VITE_ENDPOINT_PRODUCTOS 
+console.log(url)
 
 const getOne = (url, id) => {
 
