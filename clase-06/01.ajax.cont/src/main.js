@@ -143,7 +143,7 @@ const miPromesa = new Promise((resolve, reject) => {
 
 // console.log(miPromesa)
 //                    'Luis' , true
-function vinoAlCumple(persona, vino) {
+/* function vinoAlCumple(persona, vino) {
 
     const miPromesa = new Promise((resolve, reject) => {
 
@@ -163,4 +163,45 @@ function vinoAlCumple(persona, vino) {
 
 // const promesaDevuelta = vinoAlCumple('Luis', true)
 const promesaDevuelta = vinoAlCumple('Ana', false)
+console.log(promesaDevuelta) */
+
+function vinoAlCumple(persona, vino) {
+
+    const miPromesa = new Promise((resolve, reject) => {
+
+      setTimeout(() => {
+        if ( vino ) {
+          const obj = { nombre: persona, mensaje: 'Vino a mi cumple (Cumplió)' }
+          resolve(obj)
+        } else {
+          const obj = { nombre: persona, mensaje: 'No vino a mi cumple (No Cumplió)'}
+          reject(obj)
+        }
+      }, 5000);
+
+    })
+
+    return miPromesa
+
+}
+
+//const promesaDevuelta = vinoAlCumple('Luis', true)
+const promesaDevuelta = vinoAlCumple('Ana', false)
 console.log(promesaDevuelta)
+
+// setInterval(): Se va ejecutar algo cada cierto tiempo. window.setInternal() <---- BOM
+//             (callback, tiempo-milisegundos)
+// setInterval(() => {}, interval);
+/* setInterval(() => {
+  console.log('Me ejecuto cada 2 segundos')
+  console.log(new Date());
+}, 2000); */ // 1 seg -> 1000 milisegundos
+
+// setTimeout(): Se va a ejecutar algo luego de cierto tiempo. window.setTimeout() <---- BOM
+//          callback, tiempo-milisegundos
+//setTimeout(() => {}, timeout);
+/* setTimeout(() => {
+  console.log('Pasaron 5 segundos')
+}, 5000); // 5 seg -> 5000 milisegundos -> 5000 milis */
+
+// * clearInterval | clearTimeout | interrumpen el setInterval y setTimeout
