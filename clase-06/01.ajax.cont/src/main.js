@@ -224,19 +224,53 @@ function vinoAlCumple(persona, vino) {
 // https://developer.mozilla.org/es/docs/Web/API/Fetch_API
 // Endpoint -> http://localhost:8080/productos/
 
-const promesaFetch = fetch('http://localhost:8080/productos/')
+// ! GET ALL -> TODOS LOS PRODUCTOS
 
-console.log(promesaFetch)
+const getAll = () => {
+  const promesaFetch = fetch('http://localhost:8080/productos/')
 
-promesaFetch
-  .then((data) => {
-    console.log(data) // <--- esto es lo que nos devolvió el fetch <--- en el caso de que la promesa se cumple
-    const promesa = data.json() // <--- Objeto que representa una respuesta HTTP
-    return promesa
-  }) // Promesa se cumple
-  .then((productos) => {
-    console.log(productos)
-  })
-  .catch((error) => {
-    console.error(error)
-  }) // Promesa no se cumple
+  console.log(promesaFetch)
+
+  promesaFetch
+    .then((data) => {
+      console.log(data) // <--- esto es lo que nos devolvió el fetch <--- en el caso de que la promesa se cumple
+      const promesa = data.json() // <--- Objeto que representa una respuesta HTTP
+      return promesa
+    }) // Promesa se cumple
+    .then((productos) => {
+      console.log(productos)
+    })
+    .catch((error) => {
+      console.error(error)
+    }) // Promesa no se cumple
+}
+
+// getAll()
+
+// ! GET ONE -> UN SOLO PRODUCTO
+
+const url = 'http://localhost:8080/productos/'
+
+const getOne = (url, id) => {
+
+  const urlUnProducto = url + id
+  //console.log(urlUnProducto)
+
+  const objPromesa = fetch(urlUnProducto) // Es una promesa que me devuelve el objeto response
+
+  objPromesa
+    .then((res) => {
+      //console.log(res)
+      const promesaJSON = res.json()
+      return promesaJSON
+    })
+    .then((producto) => {
+      console.log(producto) // Voy a tener el producto con id 3
+    })
+    .catch((err) => {
+      console.error(err)
+    })
+
+}
+
+getOne(url, 3)
