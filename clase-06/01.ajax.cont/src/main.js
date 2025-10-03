@@ -186,8 +186,22 @@ function vinoAlCumple(persona, vino) {
 }
 
 //const promesaDevuelta = vinoAlCumple('Luis', true)
-const promesaDevuelta = vinoAlCumple('Ana', false)
-console.log(promesaDevuelta)
+//const promesaDevuelta = vinoAlCumple('Ana', false)
+//console.log(promesaDevuelta)
+
+// !! Como gestionar el resultado que nos entrega una promesa
+// Encadenamiento de funciones -> Channing
+/* promesaDevuelta
+  .then((data) => { // then() ---> resolve()
+    console.log('THEN:', data) // data -> { nombre: persona, mensaje: 'Vino a mi cumple (Cumplió)' }
+  })
+  .catch((error) => { // catch() ---> reject()
+    console.log('CATCH:', error)
+  })
+  .finally(() => {
+    console.log('FINALLY', 'Siempre se ejecuta (FIN)')
+  })
+ */
 
 // setInterval(): Se va ejecutar algo cada cierto tiempo. window.setInternal() <---- BOM
 //             (callback, tiempo-milisegundos)
@@ -205,3 +219,24 @@ console.log(promesaDevuelta)
 }, 5000); // 5 seg -> 5000 milisegundos -> 5000 milis */
 
 // * clearInterval | clearTimeout | interrumpen el setInterval y setTimeout
+
+// ! fetch: Me permite hacer peticiones asincronicas con JS
+// https://developer.mozilla.org/es/docs/Web/API/Fetch_API
+// Endpoint -> http://localhost:8080/productos/
+
+const promesaFetch = fetch('http://localhost:8080/productos/')
+
+console.log(promesaFetch)
+
+promesaFetch
+  .then((data) => {
+    console.log(data) // <--- esto es lo que nos devolvió el fetch <--- en el caso de que la promesa se cumple
+    const promesa = data.json() // <--- Objeto que representa una respuesta HTTP
+    return promesa
+  }) // Promesa se cumple
+  .then((productos) => {
+    console.log(productos)
+  })
+  .catch((error) => {
+    console.error(error)
+  }) // Promesa no se cumple
