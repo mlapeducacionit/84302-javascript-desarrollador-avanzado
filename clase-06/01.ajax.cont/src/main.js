@@ -287,9 +287,40 @@ const getOne = (url, id) => {
 
 const urlUsuarios = import.meta.env.VITE_ENDPOINT_USUARIOS
 console.log(urlUsuarios)
+
 const getOneUser = (url, id) => {
 
+  //console.log(url)
+  //console.log(id)
+  const urlUnUsuario = url + id
+  console.log(urlUnUsuario);
+
+  const respuestaPromesa = fetch(urlUnUsuario)
+
+  //console.log(respuestaPromesa) // pedding
+  respuestaPromesa
+    .then((res) => {
+      //console.log(res)
+      if( !res.ok ) {
+        //console.log('Salió todo mal')
+        //return Promise.reject('Error: Algo salió mal')
+        throw new Error('No se pudo cargar (Creando error)')
+      } 
+      //debugger
+      console.log(res)
+      const promesaJSON = res.json()
+      return promesaJSON
+    })
+    .then(data => {
+      console.log(data) // El producto con el ID -> 4
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+
 }
+
+getOneUser(urlUsuarios, 4)
 
 // U:UPDATE
 // D:DELETE
