@@ -503,8 +503,78 @@ const getAllUsersAsync = async (url) => {
 
 }
 
-getAllUsersAsync(urlUsuarios)
+//getAllUsersAsync(urlUsuarios)
 
+const createUserThenCatch = (url, nuevoUsuario) => {
+
+  //console.log(url)
+  //console.log(nuevoUsuario)
+
+  // Objeto de configuración de la petición
+  const options = {
+    method: 'POST', // Por defecto es GET
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(nuevoUsuario) // convertir un obj de js en un string (Lo necestia el protocolo http)
+  }
+
+  const promesaRespuesta = fetch(url, options) // por defecto fetch hace peticiones con el verbo GET
+
+  promesaRespuesta
+    .then((res)=> {
+
+      if ( !res.ok ) {
+        throw new Error('Ocurrió un error')
+      }
+
+      const promesaJSON = res.json()
+      return promesaJSON
+    })
+    .then((data)=> {
+      console.log(data) // Producto creado con ID -> EL ID LO CREA EL BACKEND
+    })
+    .catch((err)=> {
+      console.error(err)
+    })
+
+}
+
+const createUserAsync = async (url, nuevoUsuario) => {
+
+ try {
+
+   const options = {
+    method: 'POST', 
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(nuevoUsuario) 
+  }
+
+  const res = await fetch(url, options) 
+  console.log(res)
+
+  if ( !res.ok ) {
+    throw new Error('No se pudo crear el usuario')
+  }
+
+  const data = await res.json()
+  console.log(data)
+
+ } catch (error) {
+  console.error(error)
+ }
+
+}
+
+// createUserAsync(urlUsuarios, objNuevoUsuario)
+
+const deleteUserAsync = (url, id) => {
+
+  const urlFinal = url + id
+  console.log(urlFinal)
+
+
+}
+
+deleteUserAsync(url, 4)
 
 // ! try/catch
 // Es un bloque de código en el cual lo que queremos ejecutar como parte de nuestra aplicación podría llegar a fallar, entonces necesitamos alguna manera para estar cubierto por futuros errores
