@@ -7,6 +7,7 @@ const handleHttp = async (urlConcatena, options = {}) => {
 
     try {
 
+        // Fetch por defecto, hace petición GET -> 
         const res = await fetch(urlConcatena, options)
 
         if ( !res.ok ) {
