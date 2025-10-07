@@ -566,15 +566,32 @@ const createUserAsync = async (url, nuevoUsuario) => {
 
 // createUserAsync(urlUsuarios, objNuevoUsuario)
 
-const deleteUserAsync = (url, id) => {
+const deleteUserAsync = async (url, id) => {
 
-  const urlFinal = url + id
-  console.log(urlFinal)
+  try {
+    const urlFinal = url + id
+    console.log(urlFinal)
 
+    const options = {
+      method: 'DELETE'
+    }
+
+    const res = await fetch(urlFinal, options)
+    console.log(res)
+
+    if ( !res.ok ) {
+      throw new Error('No se pudo eliminar el usuario')
+    }
+
+    const usuarioEliminado = await res.json()
+    console.log(usuarioEliminado)
+  } catch (error) {
+    console.error(error)
+  }
 
 }
 
-deleteUserAsync(url, 4)
+// deleteUserAsync(url, 4)
 
 // ! try/catch
 // Es un bloque de código en el cual lo que queremos ejecutar como parte de nuestra aplicación podría llegar a fallar, entonces necesitamos alguna manera para estar cubierto por futuros errores
