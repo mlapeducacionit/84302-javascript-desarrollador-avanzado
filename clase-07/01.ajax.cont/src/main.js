@@ -447,6 +447,51 @@ eliminarUsuario.addEventListener('click', () => {
 
 
 
+// ! Async/Await // <----- palabras reservadas del lenguaje
+// ES8 aparece esta azucar sintantica que nos permite escribir la gestión de las promesas de otra manera, más sencilla y en forma secuencial.
+
+// ! GET ONE
+
+const getOneUserAsync = async (url, id) => {
+
+  const urlUnUsuario = url + id
+  console.log(urlUnUsuario);
+
+  const res = await fetch(urlUnUsuario)
+  console.log(res)
+
+  if ( !res.ok ) {
+    //console.log('Salió todo mal')
+    //return Promise.reject('Error: Algo salió mal')
+    throw new Error('No se pudo cargar (Creando error)')
+  } 
+
+  const data = await res.json()
+
+  console.log(data) // Un usuario
+
+}
+
+// ! try/catch
+// Es un bloque de código en el cual lo que queremos ejecutar como parte de nuestra aplicación podría llegar a fallar, entonces necesitamos alguna manera para estar cubierto por futuros errores
+
+try { // Probar ---> Ejecutar
+  // Paso 1 
+  // Paso 2 
+  // Paso 3 // <-------------------------
+  // Paso 4 
+  
+} catch (error) {
+  console.error(error)
+}
+
+
+
+
+
+
+
+
 
 
 
