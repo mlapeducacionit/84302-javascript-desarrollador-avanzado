@@ -454,28 +454,62 @@ eliminarUsuario.addEventListener('click', () => {
 
 const getOneUserAsync = async (url, id) => {
 
-  const urlUnUsuario = url + id
-  console.log(urlUnUsuario);
+ try {
 
-  const res = await fetch(urlUnUsuario)
+    const urlUnUsuario = url + id
+    console.log(urlUnUsuario);
+
+    const res = await fetch(urlUnUsuario)
+    console.log(res)
+
+    if ( !res.ok ) {
+      //console.log('Salió todo mal')
+      //return Promise.reject('Error: Algo salió mal')
+      throw new Error('No se pudo cargar (Creando error)')
+    } 
+
+    const data = await res.json()
+
+    console.log(data) // Un usuario
+  
+ } catch (error) {
+    console.error(error)
+ }
+
+}
+
+
+// ! GET ALL (Todos los usuarios)
+
+const getAllUsersAsync = async (url) => {
+ try {
+
+   console.log(url)
+
+  const res = await fetch(url)
   console.log(res)
 
   if ( !res.ok ) {
-    //console.log('Salió todo mal')
-    //return Promise.reject('Error: Algo salió mal')
-    throw new Error('No se pudo cargar (Creando error)')
-  } 
+    throw new Error('No se pudo obtener todos los productos')
+  }
 
-  const data = await res.json()
+  const todosLosUsuarios = await res.json()
+  console.log(todosLosUsuarios)
+  
+ } catch (error) {
+  console.error(error)
+ }
 
-  console.log(data) // Un usuario
 
 }
+
+getAllUsersAsync(urlUsuarios)
+
 
 // ! try/catch
 // Es un bloque de código en el cual lo que queremos ejecutar como parte de nuestra aplicación podría llegar a fallar, entonces necesitamos alguna manera para estar cubierto por futuros errores
 
-try { // Probar ---> Ejecutar
+/* try { // Probar ---> Ejecutar
   // Paso 1 
   // Paso 2 
   // Paso 3 // <-------------------------
@@ -483,7 +517,7 @@ try { // Probar ---> Ejecutar
   
 } catch (error) {
   console.error(error)
-}
+} */
 
 
 
