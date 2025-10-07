@@ -649,6 +649,25 @@ editarUsuarioAsync.addEventListener('click', () => {
 console.log(handleHttp)
 
 
+const urlSimpsons = 'https://thesimpsonsapi.com/api/characters/1'
+
+const peticionAHomero = async () => {
+
+  try {
+    const personajeHomero = await handleHttp(urlSimpsons)
+    console.log(personajeHomero);
+  } catch (error) {
+    console.error(error);
+  }
+
+}
+
+peticionAHomero()
+
+
+
+
+
 
 
 
