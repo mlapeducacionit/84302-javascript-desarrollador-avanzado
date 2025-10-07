@@ -3,6 +3,8 @@
 // OUTPUT: El resultado de la petición
 const handleHttp = async (urlConcatena, options = {}) => {
 
+    debugger
+
     try {
 
         const res = await fetch(urlConcatena, options)

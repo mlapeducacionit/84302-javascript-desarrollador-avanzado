@@ -662,8 +662,27 @@ const peticionAHomero = async () => {
 
 }
 
-peticionAHomero()
+// peticionAHomero()
 
+const createProducto = async () => {
+
+  try {
+
+    const options = {
+      method: 'POST',
+      headers: { 'content-type': 'application/json'},
+      body: JSON.stringify({ nombre: 'PC Gamer', precio: 123 })
+    }
+
+    const productoCreado = await handleHttp(url, options) 
+    console.log(productoCreado)
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+
+//createProducto()
 
 
 
