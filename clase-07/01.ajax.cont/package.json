@@ -1,0 +1,16 @@
+{
+  "name": "02.callbacks-eventos",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "json-server --watch data/db.json --port 8080"
+  },
+  "devDependencies": {
+    "json-server": "^1.0.0-beta.3",
+    "vite": "^7.1.7"
+  }
+}
