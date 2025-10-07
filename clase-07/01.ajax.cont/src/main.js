@@ -593,6 +593,44 @@ const deleteUserAsync = async (url, id) => {
 
 // deleteUserAsync(url, 4)
 
+
+const updateUserAsync = async (url, usuarioPorEditar, id) => {
+
+ try {
+
+   const options = {
+    method: 'PUT',
+    headers: { 'content-type' : 'application/json' },
+    body: JSON.stringify(usuarioPorEditar) // obj de js a string
+  }
+
+  const urlEdicion = url + id
+  console.log(urlEdicion)
+
+
+  const res = await fetch(urlEdicion, options)
+
+  if ( !res.ok ) {
+    throw new Error('No se pudo editar el usuario')
+  }
+
+  const usuarioEditado = await res.json()
+  console.log(usuarioEditado)
+
+  
+ } catch (error) {
+  console.error(error)
+ }
+
+} 
+
+const editarUsuarioAsync = document.getElementById('editar-usuario')
+
+editarUsuarioAsync.addEventListener('click', () => {
+  updateUser(urlUsuarios, usuario, usuario.id)
+})
+
+
 // ! try/catch
 // Es un bloque de código en el cual lo que queremos ejecutar como parte de nuestra aplicación podría llegar a fallar, entonces necesitamos alguna manera para estar cubierto por futuros errores
 
