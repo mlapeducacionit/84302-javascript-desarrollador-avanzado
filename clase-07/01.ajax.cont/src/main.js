@@ -1,4 +1,5 @@
 import './style.css'
+import handleHttp from './utils/handle-http'
 
 /* -------------------------------------------- */
 console.warn('/* Comunicación asincrónica con AJAX */')
@@ -644,6 +645,8 @@ editarUsuarioAsync.addEventListener('click', () => {
   console.error(error)
 } */
 
+
+console.log(handleHttp)
 
 
 

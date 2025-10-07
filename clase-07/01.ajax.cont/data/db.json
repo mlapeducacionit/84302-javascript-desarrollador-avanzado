@@ -141,11 +141,6 @@
       "email": "carlos.sanchez@example.com"
     },
     {
-      "id": "5",
-      "nombre": "Lucía Fernández",
-      "email": "lucia.fernandez@example.com"
-    },
-    {
       "id": "0a24",
       "nombre": "Pedro Sanchez",
       "email": "pedro.sanchez@example.com"
@@ -159,6 +154,14 @@
       "id": "6c92",
       "nombre": "Pedro Sanchez",
       "email": "pedro.sanchez@example.com"
+    },
+    {
+      "id": "ca9d"
+    },
+    {
+      "id": "cad2",
+      "nombre": "Maximiliano",
+      "email": "maxi@gmail.com"
     }
   ]
 }
