@@ -40,7 +40,7 @@ app.use(express.json()) // Petición AJAX
 app.use(express.urlencoded({ extended: true })); // Peticiones formulario
 //app.use(cors()) // para todos los origenes vas a estar permitidos
 
-var corsOptions = {
+const corsOptions = {
   origin: 'http://localhost:5173',
 }
 
@@ -54,7 +54,9 @@ app.get('/', (req, res) => {
 
 app.post('/datos-contacto', (req, res) => {
     console.log(req.body) // <-------- info recibida del formulario
-    res.send('Info recibida')
+    const dataRecibida = req.body
+    const dataRecibidaModificada = { ...dataRecibida, id: uuidv4() } 
+    res.json(dataRecibidaModificada) // Respondiendo con JSON.
 })
 
 // ! Middleware a nivel de direccionador
