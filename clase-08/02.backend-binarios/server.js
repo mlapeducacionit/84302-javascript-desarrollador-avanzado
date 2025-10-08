@@ -3,6 +3,7 @@ import multer from 'multer'
 import path from 'node:path'
 import { v4 as uuidv4 } from 'uuid';
 import 'dotenv/config'
+import cors from 'cors'
 
 // ! Configuraciones
 const app = express()
@@ -37,6 +38,13 @@ const upload = multer({ storage }) // ES6 => storage: storage => storage
 
 app.use(express.json()) // Petición AJAX
 app.use(express.urlencoded({ extended: true })); // Peticiones formulario
+//app.use(cors()) // para todos los origenes vas a estar permitidos
+
+var corsOptions = {
+  origin: 'http://localhost:5173',
+}
+
+app.use(cors(corsOptions))
 
 // ! Rutas
 
