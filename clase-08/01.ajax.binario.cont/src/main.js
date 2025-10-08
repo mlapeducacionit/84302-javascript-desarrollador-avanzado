@@ -66,8 +66,13 @@ formuContacto.addEventListener('submit', (e) => {
 
     // Desestructuración de objetos ( A partir de las keys desestructuro )
 
-    // const {} = objeto
+    // const {key1, key2, key3} = objeto // ! <-------- sintaxis para desestructurar
     const { nombre, apellido } = persona
     console.log(nombredafdfads) // 'Luis'
     console.log(apellido) // 'Gutierrez'
+
+    const { nombre: nombre2, apellido: apellido2 } = persona2
+    console.log(nombre2)
+    console.log(apellido2)
+
 })
