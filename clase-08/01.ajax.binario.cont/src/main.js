@@ -46,33 +46,45 @@ formuContacto.addEventListener('submit', (e) => {
 
     console.log(dataObtenida)
 
-    // desestructuración de objetos
 
-    const persona = {
-        nombre: 'Luis',
-        apellido: 'Gutierrez'
+
+    // ! desestructuración de objetos
+
+    const desestructuracion = () => {
+        const persona = {
+            nombre: 'Luis',
+            apellido: 'Gutierrez'
+        }
+
+        const persona2 = {
+            nombre: 'Nadia',
+            apellido: 'Gomez'
+        }
+
+        console.log(persona)
+        console.log(persona2)
+
+        const nombrePersona = persona.nombre
+        console.log(nombrePersona) // 'Luis'
+
+        // Desestructuración de objetos ( A partir de las keys desestructuro )
+
+        // const {key1, key2, key3} = objeto // ! <-------- sintaxis para desestructurar
+        const { nombre, apellido } = persona
+        console.log(nombre) // 'Luis'
+        console.log(apellido) // 'Gutierrez'
+
+        const { nombre: nombre2, apellido: apellido2 } = persona2
+        console.log(nombre2)
+        console.log(apellido2)
     }
 
-    const persona2 = {
-        nombre: 'Nadia',
-        apellido: 'Gomez'
-    }
+    //desestructuracion()
+    
 
-    console.log(persona)
-    console.log(persona2)
 
-    const nombrePersona = persona.nombre
-    console.log(nombrePersona) // 'Luis'
+    
 
-    // Desestructuración de objetos ( A partir de las keys desestructuro )
-
-    // const {key1, key2, key3} = objeto // ! <-------- sintaxis para desestructurar
-    const { nombre, apellido } = persona
-    console.log(nombredafdfads) // 'Luis'
-    console.log(apellido) // 'Gutierrez'
-
-    const { nombre: nombre2, apellido: apellido2 } = persona2
-    console.log(nombre2)
-    console.log(apellido2)
+    // ! formData <--- Dentro el BOM y me permite trabajar clave/valor.
 
 })
