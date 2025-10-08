@@ -1,10 +1,11 @@
 import './style.css'
+import handleHttp from './utils/handle-http'
 
 const formuContacto = document.getElementById('formu-contacto')
 console.log(formuContacto) // representación
 console.dir(formuContacto) // radiografía de la variable
 
-formuContacto.addEventListener('submit', (e) => {
+formuContacto.addEventListener('submit', async (e) => {
     e.preventDefault() // detener el comportamiento por defecto del formulario.
     
     /* const nameNombre = formuContacto[0].name
@@ -45,6 +46,24 @@ formuContacto.addEventListener('submit', (e) => {
     }
 
     console.log(dataObtenida)
+
+    const url = 'http://localhost:8080/datos-contacto/'
+
+    try {
+
+         const options = {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(dataObtenida)
+        }
+
+        const respuestaServidor = await handleHttp(url, options)
+        console.log(respuestaServidor)
+        
+    } catch (error) {
+        console.error(error)
+    }
+   
 
 
 

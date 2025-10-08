@@ -3,7 +3,7 @@
 // OUTPUT: El resultado de la petición
 const handleHttp = async (urlConcatena, options = {}) => {
 
-    debugger
+    //debugger
 
     try {
 
