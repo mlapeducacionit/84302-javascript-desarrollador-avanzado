@@ -64,9 +64,6 @@ formuContacto.addEventListener('submit', async (e) => {
         console.error(error)
     }
    
-
-
-
     // ! desestructuración de objetos
 
     const desestructuracion = () => {
@@ -98,12 +95,36 @@ formuContacto.addEventListener('submit', async (e) => {
         console.log(apellido2)
     }
 
-    //desestructuracion()
-    
-
-
-    
+    //desestructuracion()    
 
     // ! formData <--- Dentro el BOM y me permite trabajar clave/valor.
+
+    const dataFormulario = new FormData(e.target)
+
+    console.dir(dataFormulario)
+
+   /*  console.log(dataFormulario.get('nombre'))
+    console.log(dataFormulario.get('apellido')) */
+
+    /*  dataFormulario.forEach((value, key) => {
+        console.log(key);
+        console.log(value);
+    })  */
+
+    /* const options = {
+        method: 'POST',
+        headers: { 'content-type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(dataFormulario)
+    } */
+
+    const options = {
+        method: 'POST',
+        body: dataFormulario
+    }
+
+    const dataRecibida = await handleHttp(url, options)
+
+    console.log(dataRecibida); // json con la información recibida y el id
+
 
 })

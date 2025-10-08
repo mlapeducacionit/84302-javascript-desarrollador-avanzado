@@ -36,8 +36,8 @@ const upload = multer({ storage }) // ES6 => storage: storage => storage
 
 // ! Middlewares de aplicación (No vamos a utilizar multer acá como un middleware para todas las rutas.)
 
-app.use(express.json()) // Petición AJAX
-app.use(express.urlencoded({ extended: true })); // Peticiones formulario
+app.use(express.json()) // Petición AJAX/JSON
+app.use(express.urlencoded({ extended: true })); // Peticiones formulario/FormData
 //app.use(cors()) // para todos los origenes vas a estar permitidos
 
 const corsOptions = {
@@ -52,7 +52,7 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.post('/datos-contacto', (req, res) => {
+app.post('/datos-contacto', upload.none(), (req, res) => {
     console.log(req.body) // <-------- info recibida del formulario
     const dataRecibida = req.body
     const dataRecibidaModificada = { ...dataRecibida, id: uuidv4() } 
