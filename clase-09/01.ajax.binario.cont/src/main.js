@@ -201,6 +201,18 @@ formuCloud.addEventListener('submit', async e => {
 
     formData.append('file', archivo)
 
-    
+    // ! ---------------- Subiendo a cloudinary
+    const UPLOAD_PRESET = import.meta.env.VITE_UPLOAD_PRESET
+    const CLOUD_NAME = import.meta.env.VITE_CLOUD_NAME
+    //console.log(UPLOAD_PRESET)
+    //console.log(CLOUD_NAME)
+
+    formData.append('upload_preset', UPLOAD_PRESET)
+
+    /* formData.forEach((value, key) => {
+        console.log(`${key}: ${value}`)
+    }) */
+
+
 
 })
