@@ -180,3 +180,16 @@ formuUpload.addEventListener('submit', async (e) => {
     formuUpload.reset() // reseteamos el formulario
 
 })
+
+const formuCloud = document.querySelector('#formu-cloudinary')
+
+formuCloud.addEventListener('submit', async e => {
+    e.preventDefault()
+
+    const inputArchivo = document.querySelector('#lbl-archivo-cloud')
+    const previ = document.querySelector('#previsualizacion')
+    console.log(inputArchivo);
+    console.log(previ);
+
+
+})
