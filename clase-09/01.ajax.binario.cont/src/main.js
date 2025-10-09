@@ -139,7 +139,23 @@ formuUpload.addEventListener('submit', (e) => {
     const inputArchivo = document.querySelector('#lbl-file')
     const previ = document.querySelector('#previsualizacion')
 
-    console.log(inputArchivo);
-    console.log(previ);
+    //console.log(inputArchivo);
+    //console.log(previ);
+
+    //console.dir(inputArchivo);
+
+    const archivo = inputArchivo.files[0]
+
+    const formData = new FormData()
+    // key: value
+    //                 key   ,  value
+    formData.append('archivo', archivo)
+    // BOM -> Browser Object Model
+    // https://developer.mozilla.org/es/docs/Web/API/File
+
+    
+
+
+
 
 })
