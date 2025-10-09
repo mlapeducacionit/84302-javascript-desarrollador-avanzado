@@ -39,7 +39,8 @@ const upload = multer({ storage }) // ES6 => storage: storage => storage
 app.use(express.json()) // Petición AJAX/JSON
 app.use(express.urlencoded({ extended: true })); // Peticiones formulario/FormData
 //app.use(cors()) // para todos los origenes vas a estar permitidos
-app.use(express.static('/tmp/mis-uploads'))
+app.use(express.static(path.join('tmp', 'mis-uploads'))) // Disponibilizamos los archivos que están dentro de los directorios indicados. ¿Para qué? Para las demás aplicaciones puedan acceder a las imagenes
+//console.log(path.join('tmp', 'mis-uploads'))
 
 
 const corsOptions = {
@@ -66,7 +67,7 @@ app.post('/datos-contacto', upload.none(), (req, res) => {
 app.post('/subida-archivos', upload.single('archivo'), (req, res) => {
     /* res.send('Todo piola, archivo subido') */
     console.log(req.file)
-    res.send(`http://localhost:8080/tmp/mis-uploads/${req.file.filename}`)
+    res.send(`http://localhost:8080/${req.file.filename}`)
 })
 
 

@@ -172,4 +172,11 @@ formuUpload.addEventListener('submit', async (e) => {
 
     console.log(respuestaServer)
 
+    const imagen = document.createElement('img')
+    imagen.src = respuestaServer
+
+    previ.appendChild(imagen)
+ 
+    formuUpload.reset() // reseteamos el formulario
+
 })
