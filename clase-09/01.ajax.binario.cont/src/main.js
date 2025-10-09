@@ -132,3 +132,14 @@ formuContacto.addEventListener('submit', async (e) => {
 
 const formuUpload = document.getElementById('formu-upload')
 console.log(formuUpload);
+
+formuUpload.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    const inputArchivo = document.querySelector('#lbl-file')
+    const previ = document.querySelector('#previsualizacion')
+
+    console.log(inputArchivo);
+    console.log(previ);
+
+})
