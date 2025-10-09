@@ -191,5 +191,16 @@ formuCloud.addEventListener('submit', async e => {
     console.log(inputArchivo);
     console.log(previ);
 
+    // console.dir(inputArchivo.files[0])
+    // Desestructuración de arrays
+    //         0
+    const [ archivo ] = inputArchivo.files
+    console.warn(archivo)
+
+    const formData = new FormData()
+
+    formData.append('file', archivo)
+
+    
 
 })
