@@ -213,6 +213,29 @@ formuCloud.addEventListener('submit', async e => {
         console.log(`${key}: ${value}`)
     }) */
 
+    try {
+        
+       //  const url = 'https://api.cloudinary.com/v1_1/TU_CLOUD_NAME/image/upload'
+       const url = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
+       console.log(url);
+
+       const options = {
+            method: 'POST',
+            body: formData
+       }
+
+        const data = await handleHttp(url, options)
+
+        console.log(data) // <---------- Acá voy a recibir la url donde se almaceno la imagen
+        console.log(data.secure_url)
+
+        previ.innerHTML = `<img src="${data.secure_url}" width="300">`
+
+
+    } catch (error) {
+        
+    }
+
 
 
 })

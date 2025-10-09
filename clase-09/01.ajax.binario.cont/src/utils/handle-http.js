@@ -14,13 +14,21 @@ const handleHttp = async (urlConcatena, options = {}) => {
             throw new Error('No se pudo hacer petición')
         }
 
-       /*  if ( options.body instanceof File) {
-            const data = await res.blob()
+        //console.log(res.headers.get('content-type')) // type/subtype
+        const contentType = res.headers.get('content-type') // type/subtype
+
+        let data = null
+
+        if ( contentType.includes('/json') ) { // 'application/json; charset=utf-8'
+            console.log('Estoy recibiendo un json') 
+            data = await res.json()
+        } else if ( contentType.includes('text/')) { // application/json; charset=utf-8
+            console.log('Estoy recibiendo un texto');
+            data = await res.text()
         } else {
-            const data = await res.json()
-        } */
-        const data = await res.text()
-        
+            data = await res.blob()
+        }
+              
         //console.log(data)
 
         return data
