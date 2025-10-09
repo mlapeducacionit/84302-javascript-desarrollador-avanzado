@@ -14,7 +14,13 @@ const handleHttp = async (urlConcatena, options = {}) => {
             throw new Error('No se pudo hacer petición')
         }
 
-        const data = await res.json()
+       /*  if ( options.body instanceof File) {
+            const data = await res.blob()
+        } else {
+            const data = await res.json()
+        } */
+        const data = await res.text()
+        
         //console.log(data)
 
         return data

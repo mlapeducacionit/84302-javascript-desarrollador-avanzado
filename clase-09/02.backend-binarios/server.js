@@ -39,6 +39,8 @@ const upload = multer({ storage }) // ES6 => storage: storage => storage
 app.use(express.json()) // Petición AJAX/JSON
 app.use(express.urlencoded({ extended: true })); // Peticiones formulario/FormData
 //app.use(cors()) // para todos los origenes vas a estar permitidos
+app.use(express.static('/tmp/mis-uploads'))
+
 
 const corsOptions = {
   origin: 'http://localhost:5173',
@@ -62,7 +64,9 @@ app.post('/datos-contacto', upload.none(), (req, res) => {
 // ! Middleware a nivel de direccionador
 // 'archivo' hace referencia al name del input donde se cargue la imagen
 app.post('/subida-archivos', upload.single('archivo'), (req, res) => {
-    res.send('Todo piola, archivo subido')
+    /* res.send('Todo piola, archivo subido') */
+    console.log(req.file)
+    res.send(`http://localhost:8080/tmp/mis-uploads/${req.file.filename}`)
 })
 
 

@@ -133,7 +133,7 @@ formuContacto.addEventListener('submit', async (e) => {
 const formuUpload = document.getElementById('formu-upload')
 console.log(formuUpload);
 
-formuUpload.addEventListener('submit', (e) => {
+formuUpload.addEventListener('submit', async (e) => {
     e.preventDefault()
 
     const inputArchivo = document.querySelector('#lbl-file')
@@ -149,13 +149,27 @@ formuUpload.addEventListener('submit', (e) => {
     const formData = new FormData()
     // key: value
     //                 key   ,  value
-    formData.append('archivo', archivo)
+    formData.append('archivo', archivo) // Es de tipo File
     // BOM -> Browser Object Model
     // https://developer.mozilla.org/es/docs/Web/API/File
 
+    //console.log(formData.get('archivo'))
+    //console.log(formData.entries());
+    //console.log(formData.entries().next());
+    //const datos = Object.fromEntries(formData.entries()) // transforma el array devuelto por el iterador a un obj de js
+    //console.log(datos)
+
+    // ! Petición asincronica
+
+    const url = 'http://localhost:8080/subida-archivos/'
+
+    const options = {
+        method: 'POST',
+        body: formData
+    }
     
+    const respuestaServer = await handleHttp(url, options)
 
-
-
+    console.log(respuestaServer)
 
 })
