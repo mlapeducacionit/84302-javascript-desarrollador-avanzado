@@ -53,6 +53,7 @@ inputUpload.addEventListener('change', async (e) => {
         method: 'POST',
         body: formData
     }
+    
     const url = import.meta.env.VITE_URL_CLOUD
 
     try {
