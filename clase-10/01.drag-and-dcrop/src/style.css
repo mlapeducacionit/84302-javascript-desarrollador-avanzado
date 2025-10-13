@@ -1,1 +1,12 @@
+#drop {
+    width: 300px;
+    height: 300px;
+    border: 2px dashed crimson;
+    background-color: rgb(252, 232, 232);
+    text-align: center;
+    line-height: 300px;
+}
 
+#lbl-upload {
+    
+}
