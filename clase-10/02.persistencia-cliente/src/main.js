@@ -5,14 +5,14 @@ import './style.css'
 // localStorage y sessionStorage -> Vamos a poder guardar información, clave/valor. Cadenas de caracteres, numeros, booleanos, arrays y objetos.
 // ¿Cómo se van a guardar los tipos de datos, string, number, boolean, arrays, objects? Como cadena de caracteres (strings)
 
+// ! localStorage, incluso cerrando el navegador o la pestaña, al volver, sigo teniendo la información
+
 console.warn('Local Storage')
 
 console.log(window.localStorage)
 console.log(localStorage)
 
-console.warn('Session Storage')
-console.log(window.sessionStorage);
-console.log(sessionStorage);
+
 
 console.warn('// ! Obtener una variable que esta dentro del localStorage')
 console.log(window.localStorage.getItem('nombre')) // 'Maxi' 
@@ -94,3 +94,17 @@ for (const key in window.localStorage) {
         }
     } 
 }
+
+console.warn('// ! Limpiar todo el localStorage')
+
+function limpiarLocalStorage() {
+    window.localStorage.clear()
+}
+
+//limpiarLocalStorage()
+
+console.warn('Session Storage')
+// La gestión del sessionStorage es igual a la de localStorage 
+// ! El sessionStorage persiste la información hasta que la pestaña o el navegador se cierra.
+console.log(window.sessionStorage);
+console.log(sessionStorage);
