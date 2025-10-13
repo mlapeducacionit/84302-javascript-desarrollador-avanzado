@@ -16,11 +16,29 @@ const colocarImagenDentroFormData = (objImagen) => {
     return formData
 }
 
-const handleHttp = (data) => {
-    // Hago la petición
+const handleHttp = async (options, url) => {
+    try {
+        const res = await fetch(url, options)
+        if( !res.ok ) {
+            throw new Error('No se pudo hacer la petición')
+        }
+        if ( contentType.includes('application/json') ) {
+            console.log('Se recibió un json');
+            data = await res.json()
+        } else if ( contentType.includes('text/') ){
+            console.log('Se recibió texto');
+            data = await res.text()
+        } else{
+            console.log('Se recibió otro tipo');
+            data = await res.blob()
+        }
+        return data
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-inputUpload.addEventListener('change', (e) => {
+inputUpload.addEventListener('change', async (e) => {
     console.dir(e.target.files[0]);
 
     // Colocar la imagen dentro de el formData
@@ -31,7 +49,19 @@ inputUpload.addEventListener('change', (e) => {
 
     // Subida -----> HTTP https://cloudinary.com/
 
-    handleHttp(formData)
+    const options = {
+        method: 'POST',
+        body: formData
+    }
+    const url = import.meta.env.VITE_URL_CLOUD
+
+    try {
+        const rutaALaImagen = await handleHttp(options, url)
+        console.log(rutaALaImagen.secure_url)
+    } catch (error) {
+        console.error(error)
+    }
+
 
 })
 
