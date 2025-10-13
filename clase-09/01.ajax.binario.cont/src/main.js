@@ -1,4 +1,4 @@
-import './style.css'
+import './style.scss'
 import handleHttp from './utils/handle-http'
 
 const formuContacto = document.getElementById('formu-contacto')
@@ -231,11 +231,9 @@ formuCloud.addEventListener('submit', async e => {
 
         previ.innerHTML = `<img src="${data.secure_url}" width="300">`
 
-
     } catch (error) {
-        
+        console.error(error)
     }
-
 
 
 })
