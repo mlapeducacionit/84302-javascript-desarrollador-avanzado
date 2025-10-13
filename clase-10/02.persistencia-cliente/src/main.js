@@ -47,7 +47,12 @@ console.log(window.localStorage.getItem('objeto')); // Me devuelve una cadena, n
 console.log(JSON.parse(window.localStorage.getItem('objeto')));
 
 function setItemLocalStorage(clave, valor) {
-    window.localStorage.setItem(clave, JSON.stringify(valor)) 
+    //debugger
+    if ( typeof valor !== 'string') {
+        window.localStorage.setItem(clave, JSON.stringify(valor)) 
+    } else {
+         window.localStorage.setItem(clave, valor) 
+    }
 }
 
 setItemLocalStorage('persona', {nombre: 'Maxi', apellido: 'Principe'})
@@ -65,3 +70,27 @@ function deleteItemLocalStorage(clave) {
 }
 
 deleteItemLocalStorage('estaPresente')
+
+console.warn('------------------------ Representar todo el localStorage')
+//                         ⬇️ sea un iterable
+/* for (const element of window.localStorage) {
+    console.log(element)
+} */
+//      ⬇️ forEach necesita que localStorage sea un array
+/* window.localStorage.forEach(element => {
+    console.log(element)
+}); */
+
+for (const key in window.localStorage) {
+
+    // falsy y truthy
+      
+    if ( window.localStorage.getItem(key) ) {
+        try {
+            console.log(key, JSON.parse(window.localStorage.getItem(key))) // cualquier otra cosa
+        } catch (error) {
+            //console.error(error)
+            console.log(key, window.localStorage.getItem(key)) // cadena
+        }
+    } 
+}
