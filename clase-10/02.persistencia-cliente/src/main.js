@@ -18,3 +18,50 @@ console.warn('// ! Obtener una variable que esta dentro del localStorage')
 console.log(window.localStorage.getItem('nombre')) // 'Maxi' 
 console.log(window.localStorage.getItem('numero')) // '22'
 console.log(window.localStorage.getItem('isVisited')) // 'true'
+console.log(window.localStorage.getItem('apellido')) // null
+
+function getItemLS(clave) {
+    return window.localStorage.getItem(clave)
+}
+
+const valorObtenido = getItemLS('nombre')
+console.log(valorObtenido)
+
+console.warn('// ! Agregar/Guardar un dato en el localStorage')
+// El localStorage no puede convertir tipos de dato Objeto (Objetos, Arrays y las funciones) en strings
+// ! Primitivos (si me los convierte a cadenas)
+window.localStorage.setItem('mes', 'octubre')
+window.localStorage.setItem('mesEnNumero', 10) // Convierte el number en string
+window.localStorage.setItem('isOctober', true) // Convierte el boolean en string
+// ! Tipo de dato Objeto (Arrays, Objetos y Funciones)
+//window.localStorage.setItem('arreglo', [1, 2, 3, 4, 5, 6]) // !NO FUNCIONA
+// * JSON.strinfy -> convierte un elemento de js a una cadena
+// * JSON.parse -> convierte una cadena y un dato de tipo de js
+window.localStorage.setItem('arreglo', JSON.stringify([1, 2, 3, 4, 5, 6])) // Convierto el array a una cadena
+console.log(window.localStorage.getItem('arreglo'))
+console.log(JSON.parse(window.localStorage.getItem('arreglo')))
+// ! Objetos de js
+//window.localStorage.setItem('objeto', {x: 1, y: 2, z: 3}) // ! NO funciona. [object Object]
+window.localStorage.setItem('objeto', JSON.stringify({x: 1, y: 2, z: 3})) // NO funciona. [object Object]
+console.log(window.localStorage.getItem('objeto')); // Me devuelve una cadena, no un objeto
+console.log(JSON.parse(window.localStorage.getItem('objeto')));
+
+function setItemLocalStorage(clave, valor) {
+    window.localStorage.setItem(clave, JSON.stringify(valor)) 
+}
+
+setItemLocalStorage('persona', {nombre: 'Maxi', apellido: 'Principe'})
+setItemLocalStorage('palabra', 'café')
+setItemLocalStorage('estaPresente', true)
+setItemLocalStorage('animal', 'gato')
+
+console.warn('// ! Eliminar una variable en el localStorage')
+
+window.localStorage.removeItem('animal')
+window.localStorage.removeItem('numero')
+
+function deleteItemLocalStorage(clave) {
+    window.localStorage.removeItem(clave)
+}
+
+deleteItemLocalStorage('estaPresente')
